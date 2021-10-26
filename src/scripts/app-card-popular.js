@@ -8,7 +8,7 @@ class AppCardList extends HTMLElement {
         super();
     }
     
-    set movies(movies){
+    set moviesPopular(movies){
         this._movies = movies;
         this.render();
     }

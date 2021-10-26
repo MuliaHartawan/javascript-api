@@ -10,7 +10,7 @@ const popularMovie = () => {
         url : "https://api.themoviedb.org/3/movie/popular?api_key=9b3a6d77a0a149c3b7ac40d7eb9c9757", 
         method : "GET",
         success: function(result){
-            renderPopularMovie(result.results)
+            renderPopularMovie(result.results);
         },
         error: function(error){
             fallbackResult(error.responseJSON.status_message);
@@ -22,7 +22,7 @@ const nowPlayingMovie = () =>{
         url : "https://api.themoviedb.org/3/movie/now_playing?api_key=9b3a6d77a0a149c3b7ac40d7eb9c9757", 
         method : "GET",
         success: function(result){
-            renderNowPlayingMovie(result.results)
+            renderNowPlayingMovie(result.results);
         },
         error: function(error){
             fallbackResult(error);
@@ -30,11 +30,11 @@ const nowPlayingMovie = () =>{
     });
 }
 const renderPopularMovie = (movie) => {
-    moviePopularListElement.movies = movie;
+    moviePopularListElement.moviesPopular = movie;
 };
 
 const renderNowPlayingMovie = (movie) => {
-    movieNowListElement.movies = movie;
+    movieNowListElement.moviesNow = movie;
 };
 
 const fallbackResult = message => {
