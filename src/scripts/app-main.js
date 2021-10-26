@@ -1,9 +1,9 @@
 import $ from 'jquery';
-import './app-nav-bar.js';
-import './app-footer.js';
-import './app-card-list';
+import './app-card-popular';
+import './app-card-now';
 
-const movieListElement = document.querySelector("card-list");
+const moviePopularListElement = document.querySelector("card-popular");
+const movieNowListElement = document.querySelector("card-now");
 
 const popularMovie = () => {
     $.ajax({
@@ -30,18 +30,22 @@ const nowPlayingMovie = () =>{
     });
 }
 const renderPopularMovie = (movie) => {
-    movieListElement.movies = movie;
+    moviePopularListElement.movies = movie;
 };
+
 const renderNowPlayingMovie = (movie) => {
-    movieListElement.movies = movie;
+    movieNowListElement.movies = movie;
 };
+
 const fallbackResult = message => {
     movieListElement.renderError(message);
+    movieNowListElement.renderError(message);
 };
+
 
 const main = async () => {
     const movie = await popularMovie();
     const playingMovie = await nowPlayingMovie();
 }
 
-export default main
+export default main;

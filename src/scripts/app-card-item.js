@@ -17,7 +17,7 @@ class AppCardItem extends HTMLElement {
     render(){
         this.innerHTML = `
         <div class="mt-8">
-            <a href="#">
+            <a href="show.html?id=${this._movie.id}">
                 <img src="https://image.tmdb.org/t/p/w500${this._movie.poster_path}" class="hover:opacity-75 transition ease-in-out duration-150" alt="${this._movie.title}">
             </a>
             <div class="mt-2">

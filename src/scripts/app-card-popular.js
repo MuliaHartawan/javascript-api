@@ -15,7 +15,6 @@ class AppCardList extends HTMLElement {
 
     async render(){
         try {
-            console.log(this._movies);
             const {data} = await axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=9b3a6d77a0a149c3b7ac40d7eb9c9757');
             
             const updatedMovies = this._movies.map((mov) => {
@@ -34,7 +33,11 @@ class AppCardList extends HTMLElement {
                 this.appendChild(moviesItemElement);
             });
         } catch (error) {
-            
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error,
+            })
         }
     }
 
@@ -43,8 +46,8 @@ class AppCardList extends HTMLElement {
                 icon: 'error',
                 title: 'Oops...',
                 text: message,
-                })
+            })
         }
 }
 
-customElements.define("card-list", AppCardList);
+customElements.define("card-popular", AppCardList);
