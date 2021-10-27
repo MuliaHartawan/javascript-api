@@ -38,14 +38,14 @@ const renderNowPlayingMovie = (movie) => {
 };
 
 const fallbackResult = message => {
-    movieListElement.renderError(message);
+    moviePopularListElement.renderError(message);
     movieNowListElement.renderError(message);
 };
 
 
 const main = async () => {
-    const movie = await popularMovie();
-    const playingMovie = await nowPlayingMovie();
+    await popularMovie();
+    await nowPlayingMovie();
 }
 
 export default main;

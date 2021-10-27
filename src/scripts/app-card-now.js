@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import './app-card-item.js';
@@ -17,7 +16,7 @@ class AppCardList extends HTMLElement {
         try {
             const {data} = await axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=9b3a6d77a0a149c3b7ac40d7eb9c9757');
             
-            const updatedMovies = this._movies.map((mov) => {
+            this._movies.map((mov) => {
                 mov.list_genre = data.genres.filter((d) => {
                     return mov.genre_ids.includes(d.id);
                 });
