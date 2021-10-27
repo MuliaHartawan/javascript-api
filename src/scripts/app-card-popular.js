@@ -20,7 +20,6 @@ class AppCardList extends HTMLElement {
                 mov.list_genre = data.genres.filter((d) => {
                     return mov.genre_ids.includes(d.id);
                 });
-                // console.log(mov.list_genre);
                 mov.list_genre = mov.list_genre.map((r) => r.name);
 
                 return mov;

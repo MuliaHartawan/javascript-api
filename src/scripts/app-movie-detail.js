@@ -1,5 +1,4 @@
 import moment from "moment";
-import $ from "jquery";
 import axios from "axios";
 import Swal from "sweetalert2";
 class MovieDetail extends HTMLElement{
@@ -83,7 +82,6 @@ class MovieDetail extends HTMLElement{
                 `;
             });
         
-            
             const castContainerElement = this.querySelector("#cast-container");
             castContainerElement.innerHTML = ``;
 

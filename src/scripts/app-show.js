@@ -1,4 +1,5 @@
 import $ from "jquery";
+import Swal from "sweetalert2";
 import './app-movie-detail';
 
 const show = () => {
@@ -12,7 +13,11 @@ const show = () => {
             movieDetailElement.movie = result
         },
         error: function(error){
-            console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error,
+            })
         }
     });
 }
